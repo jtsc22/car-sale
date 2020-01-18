@@ -4,15 +4,21 @@ Aplicación Móvil que permita llevar el control de gestión de clientes para el
 
 ## Guia de implementacion
 
-1 - Comandos de docker para subir la base de datos de MongoDB:
+1 - Comandos de docker para subir la base de datos de MongoDB, el nombre de la base de datos debe ser -> **car_sale_db**:
 ```sh
     $ docker pull mongo
     $ docker run --name mongodb -d -p 27017:27017 mongo
  ```
 2 - En el proyecto backend en la carpeta data, se encuentran los collection que contiene la data mock inicial del proyecto.
+   
 ```sh
     $ data/
  ```
+ -  ***los nombres de los collection***
+    - client.json
+    - concessionarie.json
+    - locality.json
+       
 3 - En la raiz del proyecto backend ejecutar
 ```sh
     $ npm i
