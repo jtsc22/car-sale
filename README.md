@@ -1,6 +1,6 @@
 # car-sale
 
-Aplicación Móvil que permita llevar el control de gestión de clientes para el sector automotriz a nivel nacional.
+Aplicación Móvil que permita llevar el control de gestión de clientes para el sector automotriz a nivel nacional. la aplicación movil esta en ionic 4 y el backend en Nodejs, Express, TypeORM, MongoDB
 
 ## Guia de implementacion
 
@@ -9,11 +9,11 @@ Aplicación Móvil que permita llevar el control de gestión de clientes para el
     $ docker pull mongo
     $ docker run --name mongodb -d -p 27017:27017 mongo
  ```
-2 - En el royecto backend, importar los collection que contiene la data mock inicial del proyecto, se encuentra en la carpeta data
+2 - En el proyecto backend en la carpeta data, se encuentran los collection que contiene la data mock inicial del proyecto.
 ```sh
     $ data/
  ```
-3 - En la raiz del proyecto ejecutar
+3 - En la raiz del proyecto backend ejecutar
 ```sh
     $ npm i
     $ npm start
