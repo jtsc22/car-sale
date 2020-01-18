@@ -1,0 +1,69 @@
+  .header{
+    height: 59px;
+    padding: 9px;
+    background: #d85a5a !important;
+  }
+  
+  .secundary{
+    --background : #d85a5a !important;
+  }
+
+  
+button {
+  border: 1px solid  #ffffff;
+  border-radius: 71px;
+  font-family: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+  line-height: 0px;
+  text-transform: none;
+  cursor: pointer;
+  -webkit-appearance: button;
+  height: 49px;
+  width: 140px;
+  font-size: 1em;
+  color: #ffffff;
+  background: #d85a59;
+}
+
+.btn-container {
+  padding: 10px 20px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.icon-color {
+  color: #d85a5a;
+  font-size: 1.9em;
+}
+
+ion-input,
+ion-textarea {
+    border-radius: 10px !important;
+    background: #EDEDED;
+    --padding-bottom: 17px;
+    --padding-end: 17px;
+    --padding-start: 17px;
+    --padding-top: 17px;
+    margin-top: 5px;
+    --placeholder-color: #5d5151;
+    --placeholder-opacity: 1;
+    font-size: 0.8em;
+}
+
+
+.text-input-md {
+  margin: 13px 0px !important;
+  padding: 0;
+  width: calc(100% - 8px - 8px);
+}
+
+
+.product-menu-option {
+  font-size: 1.1em;
+  color: #b5afaf;
+  position: absolute;
+  right: 15px;
+  top: 25px;
+  z-index: 5000;
+}
