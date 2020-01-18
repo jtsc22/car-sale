@@ -2,7 +2,7 @@
 
 Aplicación Móvil que permita llevar el control de gestión de clientes para el sector automotriz a nivel nacional.
 
-## Guiar de implementacion
+## Guia de implementacion
 
 1 - Comandos de docker para subir la base de datos de MongoDB:
 ```sh
