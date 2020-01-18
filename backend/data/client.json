@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5e232c6fb9a4101805a84f96"},"name":"Junior Sanchez","phone":"8098099090","address":"Herrera","concessionaire":{"_id":"5e2326e4b9a4101805a84f86","name":"sanchez motors"},"active":true}
+{"_id":{"$oid":"5e232c95b9a4101805a84f97"},"name":"Pamela Sanchez","phone":"8098099090","address":"La vega","concessionaire":{"_id":"5e232741b9a4101805a84f88","name":"vega motors"},"active":true}
+{"_id":{"$oid":"5e232ccdb9a4101805a84f98"},"name":"Pedro Cruz","phone":"8098099090","address":"calle 13 #3","concessionaire":{"_id":"5e232725b9a4101805a84f87","name":"super motors"},"active":true}
+{"_id":{"$oid":"5e232d10b9a4101805a84f99"},"name":"Juan Cruz","phone":"8098099090","address":"calle 13 #3","concessionaire":{"_id":"5e2329f6b9a4101805a84f8a","name":"cristobal auto import"},"active":true}

@@ -1,0 +1,22 @@
+{
+   "type": "mongodb",
+   "host": "localhost",
+   "port": 27017,
+   "database": "car_sale_db",
+   "synchronize": true,
+   "logging": false,
+   "entities": [
+       "dist/entities/**/*.js"
+   ],
+   "migrations": [
+       "dist/migration/**/*.js"
+   ],
+   "subscribers": [
+       "dist/subscriber/**/*.js"
+   ],
+   "cli": {
+       "entitiesDir": "dist/entities",
+       "migrationsDir": "dist/migration",
+       "subscribersDir": "dist/subscriber"
+   }
+}
