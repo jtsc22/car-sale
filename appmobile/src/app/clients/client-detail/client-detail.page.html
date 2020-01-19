@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar class="header">
+        <ion-buttons slot="start">
+            <ion-back-button text="" ></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="primary" *ngIf="!create">
+            <ion-button color="primary" (click)="deleteClient(client.id)">
+                <ion-icon class="icon-color" slot="icon-only" name="md-trash"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>{{title}}</ion-title>
+    </ion-toolbar>
+    <ion-toolbar class="secundary" style="height: 16px;"> </ion-toolbar>
+</ion-header>
+
+<ion-content fullscrenn class="ion-padding">
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col size="12">
+                <ion-item>
+                    <ion-label position="floating">Nombre</ion-label>
+                    <ion-input type="text" [(ngModel)]="client.name" [disabled]="readonlyInput"></ion-input>
+                </ion-item>
+                <ion-item (click) = "openListLocations()">
+                    <ion-icon class="icon-option" name="ios-arrow-down"></ion-icon>
+                    <ion-label position="floating">Seleccione Ubicación del cliente</ion-label>
+                    <ion-textarea class="dropdown" type="address" [(ngModel)]="client.locality.name" [disabled]="readonlyInput"></ion-textarea>
+                </ion-item>
+                <ion-item (click) = "openBranches()">
+                    <ion-icon class="icon-option" name="ios-arrow-down"></ion-icon>
+                    <ion-label position="floating">Seleccione La Sucursal</ion-label>
+                    <ion-textarea class="dropdown" type="address" [(ngModel)]="client.concessionaire.name" [disabled]="readonlyInput"></ion-textarea>
+                </ion-item>
+            </ion-col>
+            <ion-col size="12" class="ion-padding-top" text-center>
+                <ion-button fill="outline" (click)="clickBtn()"> {{ (create) ? 'Registrar' : 'Editar' }}</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content  >

@@ -1,0 +1,53 @@
+<ion-header >
+    <ion-toolbar class="header">
+      <!-- <ion-buttons slot="start" (click)="back()">
+        <ion-icon class="icon-color" name="close-circle-outline"></ion-icon> -->
+      <!-- </ion-buttons> -->
+      <ion-title>Clientes</ion-title>
+    </ion-toolbar>
+    <ion-toolbar class="secundary" style="height: 16px;">
+  
+    </ion-toolbar>
+
+    <div class="search-bar-container">
+        <ion-searchbar placeholder="Nombre cliente" inputmode="text" type="decimal" [(ngModel)]="searchText"></ion-searchbar>
+    </div>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-fab vertical="bottom" horizontal="end" edge slot="fixed" (click)="create()">
+        <ion-fab-button>
+            <ion-icon name="person-add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+    <ng-container *ngFor="let c of clientList">
+        <ion-card *ngIf="((c.name + c.locality.name).toLowerCase()).indexOf(searchText.toLowerCase()) > -1" class="ion-no-margin" (click)="clientDetail(c)">
+            <ion-grid fixed>
+                <ion-row>
+                    <ion-col size="2">
+                        <ion-avatar>
+                            <img src="../../assets/images/avatar.png " />
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col size="1">
+                        <div class="divider "></div>
+                    </ion-col>
+                    <ion-col size="8">
+                        <ion-text color="primary ">
+                            <h6>{{ c.name }}</h6>
+                        </ion-text>
+                        <ion-text class="branch-text ">
+                            {{ c.locality.name }}
+                        </ion-text>
+                    </ion-col>
+                    <ion-col class="icon-arrow-container" size="1">
+                        <ion-icon color="primary" name="ios-arrow-forward"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card>
+    </ng-container>
+</ion-content>

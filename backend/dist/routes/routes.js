@@ -12,8 +12,8 @@ var Route = /** @class */ (function () {
         app.route("/api/carsale/client/").post(this.carSale.createClient);
         app.route("/api/carsale/client/").put(this.carSale.updateClient);
         app.route("/api/carsale/client/:client_id").delete(this.carSale.deleteClient);
-        app.route("/api/carsale/Concessionaires").get(this.generic.getConcessionaire);
-        app.route("/api/carsale/Concessionaire/").post(this.generic.createConcessionaire);
+        app.route("/api/carsale/branches").get(this.generic.getConcessionaire);
+        app.route("/api/carsale/branch/").post(this.generic.createConcessionaire);
         app.route("/api/carsale/locations").get(this.generic.getLocality);
         app.route("/api/carsale/location/").post(this.generic.createLocality);
     };

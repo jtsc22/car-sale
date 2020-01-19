@@ -7,18 +7,17 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'detail',
-    loadChildren: () => import('./clientes/detail/detail.module').then( m => m.DetailPageModule)
+    path: 'client-detail',
+    loadChildren: () => import('./clients/client-detail/client-detail.module').then( m => m.ClientDetailPageModule)
   },
   {
-    path: 'localidades',
-    loadChildren: () => import('./localidades/localidades.module').then( m => m.LocalidadesPageModule)
+    path: 'locations',
+    loadChildren: () => import('./locations/locations.module').then( m => m.LocationsPageModule)
   },
   {
-    path: 'create',
-    loadChildren: () => import('./clientes/create/create.module').then( m => m.CreatePageModule)
+    path: 'list-branches',
+    loadChildren: () => import('./branches/list-branches/list-branches.module').then( m => m.ListBranchesPageModule)
   }
-
 ];
 @NgModule({
   imports: [
@@ -26,4 +25,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

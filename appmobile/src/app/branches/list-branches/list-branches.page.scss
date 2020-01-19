@@ -1,0 +1,67 @@
+.icon-color {
+    color: #d85a5a;
+    font-size: 1.9em;
+}
+
+  .header{
+    height: 59px;
+    padding: 9px;
+    // background: #d85a5a !important;
+  }
+  
+  .secundary{
+    --background : #d85a5a !important;
+  }
+  
+
+.divider {
+    border-right: 1px solid #e5e0e0;
+    width: 1px;
+    height: 100%;
+    text-align: center;
+    margin-left: 4px;
+}
+
+.branch-text {
+    top: -9px;
+    position: relative;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+.icon-arrow-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-card {
+    margin: 15px 20px;
+}
+
+ion-avatar {
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.search-bar-container {
+    padding: 0px 10px;
+    .searchbar-input {
+        font-size: 0.8em !important;
+    }
+}
+
+.card-icon {
+    border-right: 2px solid #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-data {
+    padding-left: 20px;
+    padding: 19px 10px;
+  }
+

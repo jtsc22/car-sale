@@ -19,6 +19,9 @@ export class Client extends BaseEntity {
     address: string;
 
     @Column({nullable: true })
+    locality: string;
+
+    @Column({nullable: true })
     concessionaire: string;
 
     @Column()

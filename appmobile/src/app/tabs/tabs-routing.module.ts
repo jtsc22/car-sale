@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
-import { ClientesPage } from '../clientes/clientes.page';
 
 const routes: Routes = [
   {
@@ -9,45 +8,45 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'clients',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../clientes/clientes.module').then(m => m.CLientesPageModule)
+              import('../clients/client-list/client-list.module').then(m => m.ClientListPageModule)
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'branches',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+              import('../branches/branches.module').then(m => m.BranchesPageModule)
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'report',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+              import('../report/report.module').then(m => m.ReportPageModule)
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/clients',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/clients',
     pathMatch: 'full'
   }
 ];

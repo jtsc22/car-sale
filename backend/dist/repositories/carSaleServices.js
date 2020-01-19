@@ -76,6 +76,7 @@ var CarSaleServices = /** @class */ (function () {
                 client.name = data.name;
                 client.phone = data.phone;
                 client.address = data.address;
+                client.locality = data.locality;
                 client.concessionaire = data.concessionaire;
                 client.active = true;
                 return [2 /*return*/, typeorm_1.getManager().getRepository(clients_1.Client).save(client)];
@@ -93,6 +94,7 @@ var CarSaleServices = /** @class */ (function () {
                         client.name = data.name;
                         client.phone = data.phone;
                         client.address = data.address;
+                        client.locality = data.locality;
                         client.concessionaire = data.concessionaire;
                         client.active = true;
                         return [2 /*return*/, typeorm_1.getManager().getRepository(clients_1.Client).update(id, client)];

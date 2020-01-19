@@ -1,4 +1,143 @@
-{"_id":{"$oid":"5e232c6fb9a4101805a84f96"},"name":"Junior Sanchez","phone":"8098099090","address":"Herrera","concessionaire":{"_id":"5e2326e4b9a4101805a84f86","name":"sanchez motors"},"active":true}
-{"_id":{"$oid":"5e232c95b9a4101805a84f97"},"name":"Pamela Sanchez","phone":"8098099090","address":"La vega","concessionaire":{"_id":"5e232741b9a4101805a84f88","name":"vega motors"},"active":true}
-{"_id":{"$oid":"5e232ccdb9a4101805a84f98"},"name":"Pedro Cruz","phone":"8098099090","address":"calle 13 #3","concessionaire":{"_id":"5e232725b9a4101805a84f87","name":"super motors"},"active":true}
-{"_id":{"$oid":"5e232d10b9a4101805a84f99"},"name":"Juan Cruz","phone":"8098099090","address":"calle 13 #3","concessionaire":{"_id":"5e2329f6b9a4101805a84f8a","name":"cristobal auto import"},"active":true}
+{
+    "_id": {
+        "$oid": "5e233a546673f91f5567da10"
+    },
+    "name": "Juan Cruz",
+    "phone": "8098099090",
+    "address": "calle 13 #3",
+    "locality": {
+        "_id": "5e2324cb13f1c01749c04c44",
+        "name": "Santiago"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e233a5c6673f91f5567da11"
+    },
+    "name": "Pamela Michel Cruz",
+    "phone": "8098099090",
+    "address": "calle 13 #3",
+    "locality": {
+        "_id": "5e2324cb13f1c01749c04c44",
+        "name": "Santiago"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e233a646673f91f5567da12"
+    },
+    "name": "Veronica Michel Perez",
+    "phone": "8098099090",
+    "address": "calle 13 #3",
+    "locality": {
+        "_id": "5e2324cb13f1c01749c04c44",
+        "name": "Santiago"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e233a7a6673f91f5567da13"
+    },
+    "name": "Junior Sanchez",
+    "phone": "8098099090",
+    "address": "calle 13 #3",
+    "locality": {
+        "_id": "5e2324c413f1c01749c04c43",
+        "name": "Santo Domingo"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e233a7d6673f91f5567da14"
+    },
+    "name": "Tomas Sanchez",
+    "phone": "8098099090",
+    "address": "calle 13 #3",
+    "locality": {
+        "_id": "5e2324c413f1c01749c04c43",
+        "name": "Santo Domingo"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e233a8c6673f91f5567da15"
+    },
+    "name": "Juan Perez",
+    "phone": "8098099090",
+    "address": "calle 13 #3",
+    "locality": {
+        "_id": "5e2324d313f1c01749c04c45",
+        "name": "La vega"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e233a9c6673f91f5567da16"
+    },
+    "name": "Maria Perez",
+    "phone": "8098099090",
+    "address": "calle 13 #3",
+    "locality": {
+        "_id": "5e2324da13f1c01749c04c46",
+        "name": "La romana"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e233aa66673f91f5567da17"
+    },
+    "name": "Jefferson Lugo",
+    "phone": "8098099090",
+    "address": "calle 13 #3",
+    "locality": {
+        "_id": "5e2324da13f1c01749c04c46",
+        "name": "La romana"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e233ab86673f91f5567da18"
+    },
+    "name": "Pedro Lugo",
+    "phone": "8098099090",
+    "address": "calle 13 #3",
+    "locality": {
+        "_id": "5e2324ee13f1c01749c04c48",
+        "name": "Higuey"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e233adb6673f91f5567da19"
+    },
+    "name": "Mario Perez",
+    "phone": "8098099090",
+    "address": "calle 13 #3",
+    "locality": {
+        "_id": "5e2324c413f1c01749c04c43",
+        "name": "Santo Domingo"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e233ae86673f91f5567da1a"
+    },
+    "name": "Guillermo Martinez",
+    "phone": "8098099090",
+    "address": "calle 13 #3",
+    "locality": {
+        "_id": "5e2324c413f1c01749c04c43",
+        "name": "Santo Domingo"
+    },
+    "active": true
+}

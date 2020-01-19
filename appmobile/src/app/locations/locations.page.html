@@ -1,0 +1,31 @@
+<ion-header >
+  <ion-toolbar class="header">
+    <ion-buttons slot="start" (click)="back()">
+      <ion-icon class="icon-color" name="close-circle-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Localidades</ion-title>
+  </ion-toolbar>
+  <ion-toolbar class="secundary" style="height: 16px;">
+
+  </ion-toolbar>
+
+  <!-- <div class="search-bar-container">
+    <ion-searchbar placeholder="Localidad" inputmode="text" type="decimal" [(ngModel)]="searchText"></ion-searchbar>
+</div> -->
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+
+      <ng-container *ngFor="let l of dataList">
+          <ion-row *ngIf="((l.name).toLowerCase()).indexOf(searchText.toLowerCase()) > -1" class="custom-card" (click)="closeDialog(l)">
+              <ion-col class="card-icon" size="2">
+             <ion-icon class="icon-color" name="pin"></ion-icon>
+              </ion-col>
+              <ion-col class="card-data" size="10">
+                  <div>{{l.name}}</div>
+              </ion-col>
+          </ion-row>
+      </ng-container>
+
+</ion-content>
+

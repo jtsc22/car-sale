@@ -51,6 +51,10 @@ var Client = /** @class */ (function (_super) {
     __decorate([
         typeorm_1.Column({ nullable: true }),
         __metadata("design:type", String)
+    ], Client.prototype, "locality", void 0);
+    __decorate([
+        typeorm_1.Column({ nullable: true }),
+        __metadata("design:type", String)
     ], Client.prototype, "concessionaire", void 0);
     __decorate([
         typeorm_1.Column(),

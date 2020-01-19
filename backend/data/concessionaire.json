@@ -1,0 +1,176 @@
+{
+    "_id": {
+        "$oid": "5e2326e4b9a4101805a84f86"
+    },
+    "name": "sanchez motors",
+    "locality": {
+        "_id": "5e2324cb13f1c01749c04c44",
+        "name": "Santiago"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232725b9a4101805a84f87"
+    },
+    "name": "super motors",
+    "locality": {
+        "_id": "5e2324c413f1c01749c04c43",
+        "name": "Santo Domingo"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232741b9a4101805a84f88"
+    },
+    "name": "vega motors",
+    "locality": {
+        "_id": "5e2324d313f1c01749c04c45",
+        "name": "La vega"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232768b9a4101805a84f89"
+    },
+    "name": "auto adorno motors",
+    "locality": {
+        "_id": "5e2324da13f1c01749c04c46",
+        "name": "La romana"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e2329f6b9a4101805a84f8a"
+    },
+    "name": "cristobal auto import",
+    "locality": {
+        "_id": "5e2324e413f1c01749c04c47",
+        "name": "San Cristobal"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232a18b9a4101805a84f8b"
+    },
+    "name": "Super Carro",
+    "locality": {
+        "_id": "5e2324ee13f1c01749c04c48",
+        "name": "Higuey"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232a33b9a4101805a84f8c"
+    },
+    "name": "Mello Auto Car",
+    "locality": {
+        "_id": "5e2324ee13f1c01749c04c48",
+        "name": "Higuey"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232a6ab9a4101805a84f8d"
+    },
+    "name": "carros import",
+    "locality": {
+        "_id": "5e23250413f1c01749c04c4b",
+        "name": "San Pedro"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232a7eb9a4101805a84f8e"
+    },
+    "name": "Samana car import",
+    "locality": {
+        "_id": "5e23251b13f1c01749c04c4d",
+        "name": "Samana"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232a94b9a4101805a84f8f"
+    },
+    "name": "Cana Auto import",
+    "locality": {
+        "_id": "5e23256613f1c01749c04c50",
+        "name": "Punta Cana"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232aa9b9a4101805a84f90"
+    },
+    "name": "Bella Auto import",
+    "locality": {
+        "_id": "5e23256613f1c01749c04c50",
+        "name": "Punta Cana"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232accb9a4101805a84f91"
+    },
+    "name": "Santiago Auto import",
+    "locality": {
+        "_id": "5e2324cb13f1c01749c04c44",
+        "name": "Santiago"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232aecb9a4101805a84f92"
+    },
+    "name": "Dajabon Auto import",
+    "locality": {
+        "_id": "5e23253413f1c01749c04c4e",
+        "name": "Dajabon"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232b19b9a4101805a84f93"
+    },
+    "name": "super carro Auto import",
+    "locality": {
+        "_id": "5e23256c13f1c01749c04c51",
+        "name": "El Seibo"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232b2ab9a4101805a84f94"
+    },
+    "name": "Pina Auto import",
+    "locality": {
+        "_id": "5e23257213f1c01749c04c52",
+        "name": "Elias pina"
+    },
+    "active": true
+}
+{
+    "_id": {
+        "$oid": "5e232b43b9a4101805a84f95"
+    },
+    "name": "Altagracia Auto import",
+    "locality": {
+        "_id": "5e23254313f1c01749c04c4f",
+        "name": "Villa Altagracia"
+    },
+    "active": true
+}

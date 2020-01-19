@@ -25,7 +25,8 @@ class CarSaleServices {
         client.name = data.name;
         client.phone = data.phone;
         client.address = data.address;
-        client.concessionaire = data.concessionaire;
+        client.locality = data.locality;
+        client.concessionaire = data.concessionaire
         client.active = true;
         return getManager().getRepository(Client).save(client);
     }
@@ -35,7 +36,8 @@ class CarSaleServices {
         client.name = data.name;
         client.phone = data.phone;
         client.address = data.address;
-        client.concessionaire = data.concessionaire;
+        client.locality = data.locality;
+        client.concessionaire = data.concessionaire
         client.active = true;
         return getManager().getRepository(Client).update(id, client);
     }

@@ -1,5 +1,5 @@
 {
-  "name": "car-sale",
+  "name": "customer-car-sale-app",
   "integrations": {
     "cordova": {}
   },
