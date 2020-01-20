@@ -14,7 +14,7 @@ Aplicación Móvil que permita llevar el control de gestión de clientes para el
 ```sh
     $ data/
  ```
- -  ***los nombres de los collection***
+ -  ***los nombres de los collection (se deben llamar igual en la BD)***
     - client.json
     - concessionarie.json
     - locality.json
