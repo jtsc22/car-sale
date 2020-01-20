@@ -24,7 +24,12 @@ export class ClientListPage {
   }
 
   async load(){
-    this.clientList = await this.request.getClients();
+    try {
+      this.clientList = await this.request.getClients();
+    } catch (e){
+      
+    }
+    
   }
 
   clientDetail(client: any) {

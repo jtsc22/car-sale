@@ -15,10 +15,10 @@ import { ListBranchesPage } from '../../branches/list-branches/list-branches.pag
 
 export class ClientDetailPage {
 
-  client: any = { id : "", name: "", locality: { id: "", name: "" }, concessionaire : { id: "", name: ""} };
+  client: any = { id: "", name: "", locality: { id: "", name: "" }, concessionaire: { id: "", name: "" } };
   create: boolean = true;
   locations: Locations[] = [];
-  branches : Branches[] =[]
+  branches: Branches[] = []
   title: string = "Nuevo Cliente"
 
   constructor(
@@ -52,35 +52,43 @@ export class ClientDetailPage {
       return;
     }
 
-    let result: any = await this.request.createClient(this.client)
+    try {
 
-    if (!result.success) {
-      await this.showAlert("Error", "Ocurrio un error al momento de crear el cliente")
-      return;
+      let result: any = await this.request.createClient(this.client)
+
+      if (!result.success) {
+        await this.showAlert("Error", "Ocurrio un error al momento de crear el cliente")
+        return;
+      }
+
+      await this.showAlert("Notificación", "Cliente creado correctamente")
+      this.router.navigate(['tabs/clients']);
+    } catch (e) {
+      console.log(e)
     }
-
-    await this.showAlert("Notificación", "Cliente creado correctamente")
-    this.router.navigate(['tabs/clients']);
-
   }
 
   async editClient() {
-    let result: any = await this.request.updateClient(this.client)
-    console.log(this.client)
+    try {
 
-    if (!result.success) {
-      await this.showAlert("Error", "Ocurrio un error al momento de editar el cliente");
+      let result: any = await this.request.updateClient(this.client)
+
+      if (!result.success) {
+        await this.showAlert("Error", "Ocurrio un error al momento de editar el cliente");
+        return;
+      }
+
+      await this.showAlert("Notificación", "Cliente editado correctamente");
+      this.router.navigate(['tabs/clients']);
       return;
+    } catch (e) {
+      console.log(e)
     }
-
-    await this.showAlert("Notificación", "Cliente editado correctamente");
-    this.router.navigate(['tabs/clients']);
-    return;
 
   }
 
   async deleteClient(id: any) {
-    console.log(id)
+
     const alert = await this.alertController.create({
       header: 'Confirmar',
       message: '¿Seguro que desea elimar este registro?',
@@ -95,15 +103,19 @@ export class ClientDetailPage {
         }, {
           text: 'Eliminar',
           handler: async () => {
-            let result = await this.request.deteleClient(id);
-            console.log(result)
-            if (!result.success) {
-              await this.showAlert("Error", "Ocurrio un error al momento de eliminar cliente")
-             return;
+            try {
+              let result = await this.request.deteleClient(id);
+              console.log(result)
+              if (!result.success) {
+                await this.showAlert("Error", "Ocurrio un error al momento de eliminar cliente")
+                return;
+              }
+              await this.showAlert("Notificación", "Registro eliminado correctamente")
+              this.router.navigate(['tabs/clients']);
+              return;
+            } catch (e) {
+              console.log(e)
             }
-            await this.showAlert("Notificación", "Registro eliminado correctamente")
-            this.router.navigate(['tabs/clients']);
-            return;
           }
         }
       ]
@@ -114,39 +126,47 @@ export class ClientDetailPage {
 
 
   async openListLocations() {
-    this.locations = await this.request.getLocations();
-    const modal = await this.modalCtrl.create({
-      component: LocationsPage,
-      componentProps: {
-        dataList: this.locations
+    try {
+      this.locations = await this.request.getLocations();
+      const modal = await this.modalCtrl.create({
+        component: LocationsPage,
+        componentProps: {
+          dataList: this.locations
+        }
+      });
+
+      await modal.present();
+      let result = await modal.onDidDismiss();
+
+      if (result.data) {
+        this.client.locality = result.data;
+        console.log(this.client)
       }
-    });
-
-    await modal.present();
-    let result = await modal.onDidDismiss();
-
-    if (result.data) {
-      this.client.locality = result.data;
-      console.log(this.client)
+    } catch (e) {
+      console.log(e)
     }
   }
 
   async openBranches() {
-    this.branches = await this.request.getBranches();
-    console.log(this.branches)
-    const modal = await this.modalCtrl.create({
-      component: ListBranchesPage,
-      componentProps: {
-        dataList: this.branches
-      }
-    });
+    try {
+      this.branches = await this.request.getBranches();
+      console.log(this.branches)
+      const modal = await this.modalCtrl.create({
+        component: ListBranchesPage,
+        componentProps: {
+          dataList: this.branches
+        }
+      });
 
-    await modal.present();
-    let result = await modal.onDidDismiss();
-    console.log(result)
-    if (result.data) {
-      this.client.concessionaire = result.data;
-      console.log(this.client)
+      await modal.present();
+      let result = await modal.onDidDismiss();
+      console.log(result)
+      if (result.data) {
+        this.client.concessionaire = result.data;
+        console.log(this.client)
+      }
+    } catch (e) {
+      console.log(e)
     }
   }
 

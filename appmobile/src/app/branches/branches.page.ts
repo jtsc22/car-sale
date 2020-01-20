@@ -11,20 +11,19 @@ export class BranchesPage {
 
   searchText: string = "";
   branchList : Branches[] = []
-  // branchList = [
-  //   { name: "Sucursal 1", address: "Independencia Km 10 1/2, Edificio Elsa I, Urb. Atlantida" },
-  //   { name: "Sucursal 2", address: "Independencia Km 10 1/2, Edificio Elsa I, Urb. Atlantida" },
-  //   { name: "Sucursal 3", address: "Independencia Km 10 1/2, Edificio Elsa I, Urb. Atlantida" },
-  //   { name: "Sucursal 4", address: "Independencia Km 10 1/2, Edificio Elsa I, Urb. Atlantida" }
-  // ]
 
   constructor(private request : RequestService) { 
 
   }
 
   async ionViewWillEnter(){
-   this.branchList = await this.request.getBranches();
-   console.log(this.branchList)
+    try {
+      this.branchList = await this.request.getBranches();
+      console.log(this.branchList)
+    } catch (e) {
+      console.log(e)
+    }
+  
   }
 
 }

@@ -8,8 +8,10 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./list-branches.page.scss'],
 })
 export class ListBranchesPage implements OnInit {
+ 
   @Input() dataList: Branches[] = [];
   searchText: string = "";
+  
   constructor(private modalCrtl : ModalController) { }
 
   ngOnInit() {

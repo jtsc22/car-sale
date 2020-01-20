@@ -7,7 +7,7 @@ import { Clients } from '../models/clients.model';
 import { Branches } from '../models/branches.model';
 import { ListBranchesPage } from '../branches/list-branches/list-branches.page';
 import { Router } from '@angular/router';
-import * as pdfMake  from "pdfmake/build/pdfmake";
+import * as pdfMake from "pdfmake/build/pdfmake";
 import * as pdfFonts from "pdfmake/build/vfs_fonts";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 import { Platform } from '@ionic/angular';
@@ -23,7 +23,7 @@ export class ReportPage {
   clientList: Clients[] = [];
   clientGrid: Clients[] = [];
   branches: Branches[] = [];
-  routerSubscription : any;
+  routerSubscription: any;
   locations: Locations[] = []
   total: any = -1;
   locality: string;
@@ -38,72 +38,86 @@ export class ReportPage {
     public fileOpener: FileOpener,
     public platform: Platform) { }
 
-  async ionViewWillEnter(){
-    this.clientList = await this.request.getClients();
-  
+  async ionViewWillEnter() {
+    try {
+      this.clientList = await this.request.getClients();
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   async openList() {
-    this.locations = await this.request.getLocations();
-    const modal = await this.modalCtrl.create({
-      component: LocationsPage,
-      componentProps: {
-        dataList: this.locations
-      }
-    });
-
-    await modal.present();
-    let result = await modal.onDidDismiss();
-
-    if (result.data) {
+    try {
 
 
-      /**Filtro para obtener los cliente de una sucursal segun su localidad */
-      this.clientGrid = this.clientList.filter((c: any) => { 
-        return (c.locality.name === result.data.name && c.concessionaire.name === this.branch) 
+      this.locations = await this.request.getLocations();
+      const modal = await this.modalCtrl.create({
+        component: LocationsPage,
+        componentProps: {
+          dataList: this.locations
+        }
       });
 
-      this.total = this.clientGrid.length;
+      await modal.present();
+      let result = await modal.onDidDismiss();
 
-      if (!(this.total > 0)) {
-        this.locality = ""
-        this.showAlert("Aviso", "No se encontraron registros")
-        return;
+      if (result.data) {
+
+
+        /**Filtro para obtener los cliente de una sucursal segun su localidad */
+        this.clientGrid = this.clientList.filter((c: any) => {
+          return (c.locality.name === result.data.name && c.concessionaire.name === this.branch)
+        });
+
+        this.total = this.clientGrid.length;
+
+        if (!(this.total > 0)) {
+          this.locality = ""
+          this.showAlert("Aviso", "No se encontraron registros")
+          return;
+        }
+
+        this.locality = result.data.name;
       }
-
-      this.locality = result.data.name;
+    } catch (e) {
+      console.log(e)
     }
-
   }
 
   async openBranches() {
-    this.branches = await this.request.getBranches();
-    this.locality = ""
 
-    const modal = await this.modalCtrl.create({
-      component: ListBranchesPage,
-      componentProps: {
-        dataList: this.branches
-      }
-    });
+    try {
 
-    await modal.present();
-    let result = await modal.onDidDismiss();
+      this.branches = await this.request.getBranches();
+      this.locality = ""
 
-    if (result.data) {
-
-      this.clientGrid = this.clientList.filter((c: any) => { 
-        return (c.concessionaire.name === result.data.name) 
+      const modal = await this.modalCtrl.create({
+        component: ListBranchesPage,
+        componentProps: {
+          dataList: this.branches
+        }
       });
-      this.total = this.clientGrid.length;
 
-      if (!(this.total > 0)) {
-        this.branch = ""
-        this.showAlert("Aviso", "No se encontraron registros")
-        return;
+      await modal.present();
+      let result = await modal.onDidDismiss();
+
+      if (result.data) {
+
+        this.clientGrid = this.clientList.filter((c: any) => {
+          return (c.concessionaire.name === result.data.name)
+        });
+        this.total = this.clientGrid.length;
+
+        if (!(this.total > 0)) {
+          this.branch = ""
+          this.showAlert("Aviso", "No se encontraron registros")
+          return;
+        }
+
+        this.branch = result.data.name;
       }
-
-      this.branch = result.data.name;
+    } catch (e) {
+      console.log(e)
     }
   }
 
@@ -117,49 +131,51 @@ export class ReportPage {
     await alert.present();
   }
 
-  downloadPDF(){
-   
-    let data: string [] = [];
+  downloadPDF() {
+    try {
+      let data: string[] = [];
 
-    data.push("Sucursal : " + this.branch.toUpperCase())
-    data.push(" ")
-    
-    data.push(" ")
-    data.push('CLIENTE     |   LOCALIDAD ')
-    data.push("____________________________________________________________________________________________")
-    this.clientGrid.forEach((c : any, i : number) => {
-      console.log(c)
-    data.push(`${i} - ${c.name}  -  ${c.locality.name}`)
-    data.push("_____________________________________________________________________________________________")  
-    });
+      data.push("Sucursal : " + this.branch.toUpperCase())
+      data.push(" ")
 
-
-
-    let dataPdf = {
-      content: data
-    };
-
-    this.pdf = pdfMake.createPdf(dataPdf);
- 
-    if (this.platform.is('cordova')) {
-      this.pdf.getBuffer((buffer: BlobPart) => {
-        var blob = new Blob([buffer], { type: 'application/pdf' });
-        
-        this.file.writeFile(this.file.dataDirectory, 'report.pdf', blob, { replace: true }).then(fileEntry => {
-
-          this.fileOpener.open(this.file.dataDirectory + 'report.pdf', 'application/pdf');
-        });
-
+      data.push(" ")
+      data.push('CLIENTE     |   LOCALIDAD ')
+      data.push("____________________________________________________________________________________________")
+      this.clientGrid.forEach((c: any, i: number) => {
+        console.log(c)
+        data.push(`${i} - ${c.name}  -  ${c.locality.name}`)
+        data.push("_____________________________________________________________________________________________")
       });
 
-      return true;
-    }
 
-    this.pdf.download();
 
-    }
-  
-  ionViewDidLeave(){
+      let dataPdf = {
+        content: data
+      };
+
+      this.pdf = pdfMake.createPdf(dataPdf);
+
+      if (this.platform.is('cordova')) {
+        this.pdf.getBuffer((buffer: BlobPart) => {
+          var blob = new Blob([buffer], { type: 'application/pdf' });
+
+          this.file.writeFile(this.file.dataDirectory, 'report.pdf', blob, { replace: true }).then(fileEntry => {
+
+            this.fileOpener.open(this.file.dataDirectory + 'report.pdf', 'application/pdf');
+          });
+
+        });
+
+        return true;
+      }
+
+      this.pdf.download();
+    } catch (e) {
+      console.log(e)
+    } 
+  }
+
+  ionViewDidLeave() {
     this.clientList = null;
     this.clientGrid = null;
     this.total = -1
