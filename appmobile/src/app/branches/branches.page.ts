@@ -18,7 +18,9 @@ export class BranchesPage {
   //   { name: "Sucursal 4", address: "Independencia Km 10 1/2, Edificio Elsa I, Urb. Atlantida" }
   // ]
 
-  constructor(private request : RequestService) { }
+  constructor(private request : RequestService) { 
+
+  }
 
   async ionViewWillEnter(){
    this.branchList = await this.request.getBranches();

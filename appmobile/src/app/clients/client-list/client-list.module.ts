@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ClientListPage } from './client-list.page';
+import { ListBranchesPage } from '../../branches/list-branches/list-branches.page';
 
 @NgModule({
   imports: [

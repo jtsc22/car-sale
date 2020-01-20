@@ -15,7 +15,7 @@
 
 <ion-content>
   <ng-container *ngFor="let b of dataList">
-      <ion-card class="ion-no-margin" (click)="closeDialog(b)">
+      <ion-card *ngIf="((b.name + b.locality.name).toLowerCase()).indexOf(searchText.toLowerCase()) > -1" class="ion-no-margin" (click)="closeDialog(b)">
           <ion-grid fixed>
               <ion-row>
                   <ion-col class="card-icon" size="2">

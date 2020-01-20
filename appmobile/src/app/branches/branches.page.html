@@ -10,14 +10,14 @@
     </ion-toolbar>
 
     <div class="search-bar-container">
-        <ion-searchbar placeholder="Nombre de la sucursal" inputmode="text" type="decimal" [(ngModel)]="searchText"></ion-searchbar>
+        <ion-searchbar placeholder="Nombre de la sucursal" inputmode="text" type="decimal" [(ngModel)]='searchText'></ion-searchbar>
     </div>
 
 </ion-header>
 
 <ion-content>
     <ng-container *ngFor="let b of branchList">
-        <ion-card *ngIf="((b.name + b.address).toLowerCase()).indexOf(searchText.toLowerCase()) > -1" class="ion-no-margin">
+        <ion-card *ngIf="((b.name + b.locality.name).toLowerCase()).indexOf(searchText.toLowerCase()) > -1" class="ion-no-margin">
             <ion-grid fixed>
                 <ion-row>
                     <ion-col class="card-icon" size="2">

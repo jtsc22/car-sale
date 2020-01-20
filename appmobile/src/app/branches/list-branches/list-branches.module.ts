@@ -1,19 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { ListBranchesPageRoutingModule } from './list-branches-routing.module';
-
 import { ListBranchesPage } from './list-branches.page';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListBranchesPageRoutingModule
+    RouterModule.forChild([{ path: '', component: ListBranchesPage }])
   ],
   declarations: [ListBranchesPage]
 })
